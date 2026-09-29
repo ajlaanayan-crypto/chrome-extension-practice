@@ -1,0 +1,118 @@
+/* OmniTheme Seamless Universal Wallpaper & Deep YouTube AdBlocker CSS Engine */
+
+/* 1. Deep YouTube AdBlocker CSS Rule (Hides Video Banners, Overlays, Promoted Items, Sponsor Slots) */
+body.omni-adblock-active ytd-promoted-sparkles-web-renderer,
+body.omni-adblock-active ytd-display-ad-renderer,
+body.omni-adblock-active ytd-statement-banner-renderer,
+body.omni-adblock-active ytd-banner-promo-renderer,
+body.omni-adblock-active ytd-ad-slot-renderer,
+body.omni-adblock-active ytd-in-feed-ad-layout-renderer,
+body.omni-adblock-active ytd-search-pyv-renderer,
+body.omni-adblock-active .video-ads,
+body.omni-adblock-active .ytp-ad-module,
+body.omni-adblock-active .ytp-ad-overlay-container,
+body.omni-adblock-active .ytp-ad-message-container,
+body.omni-adblock-active #player-ads,
+body.omni-adblock-active #offer-module,
+body.omni-adblock-active #rendering-content.ytd-ad-slot-renderer {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* 2. Global Fixed Background Wallpaper Overlay */
+#omni-theme-bg-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -999999 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease, filter 0.3s ease !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+
+/* 3. Seamless Transparency Overriding All Opaque YouTube Home Page & Web Containers */
+body.omni-theme-active,
+body.omni-theme-active html,
+body.omni-theme-active #app,
+body.omni-theme-active #root,
+body.omni-theme-active #main,
+body.omni-theme-active main,
+body.omni-theme-active #content,
+body.omni-theme-active ytd-app,
+body.omni-theme-active ytd-page-manager,
+body.omni-theme-active ytd-watch-flexy,
+body.omni-theme-active ytd-browse,
+body.omni-theme-active ytd-browse[page-subtype="home"],
+body.omni-theme-active ytd-two-column-browse-results-renderer,
+body.omni-theme-active ytd-rich-grid-renderer,
+body.omni-theme-active ytd-rich-section-renderer,
+body.omni-theme-active #primary.ytd-two-column-browse-results-renderer,
+body.omni-theme-active #contents.ytd-rich-grid-renderer,
+body.omni-theme-active #contents,
+body.omni-theme-active #primary,
+body.omni-theme-active #secondary,
+body.omni-theme-active #columns,
+body.omni-theme-active ytd-masthead,
+body.omni-theme-active #masthead-container,
+body.omni-theme-active #masthead,
+body.omni-theme-active #container.ytd-masthead,
+body.omni-theme-active #background.ytd-masthead,
+body.omni-theme-active ytd-feed-filter-chip-bar-renderer,
+body.omni-theme-active yt-chip-cloud-renderer,
+body.omni-theme-active #chips-wrapper,
+body.omni-theme-active #header.ytd-browse,
+body.omni-theme-active ytd-guide-renderer,
+body.omni-theme-active #guide-content,
+body.omni-theme-active ytd-mini-guide-renderer,
+body.omni-theme-active #gb,
+body.omni-theme-active .gb_Od,
+body.omni-theme-active header.gb_Qd,
+body.omni-theme-active .gb_7d,
+body.omni-theme-active #searchform,
+body.omni-theme-active #header,
+body.omni-theme-active .sfbg,
+body.omni-theme-active .fbar,
+body.omni-theme-active .aHs-bnN,
+body.omni-theme-active .nH,
+body.omni-theme-active .bkK,
+body.omni-theme-active #viewport,
+body.omni-theme-active mat-sidenav-content,
+body.omni-theme-active .course-container {
+  background-color: transparent !important;
+  background-image: none !important;
+  background: transparent !important;
+}
+
+/* 4. Translucent YouTube Category Filter Chips */
+body.omni-theme-active yt-chip-cloud-chip-renderer {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 5. Force Text Selection & Clipboard Unblocking */
+*, *::before, *::after, body, html, input, textarea, [contenteditable], .monaco-editor, .CodeMirror, pre, code {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  -webkit-touch-callout: default !important;
+}
+
+::selection {
+  background: #3390ec !important;
+  color: #ffffff !important;
+}
+
+::-moz-selection {
+  background: #3390ec !important;
+  color: #ffffff !important;
+}

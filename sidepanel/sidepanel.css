@@ -1,0 +1,411 @@
+/* Neumorphic Light Grey & Emerald Theme for Ayan Extension v1.1.0 */
+
+:root {
+  --bg-color: #e0e5ec;
+  --panel-bg: #e0e5ec;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --accent-green: #10b981;
+  --accent-green-shadow: #059669;
+  --border-radius: 16px;
+  
+  /* Neumorphic Shadows */
+  --shadow-flat: 6px 6px 14px #b8bec5, -6px -6px 14px #ffffff;
+  --shadow-flat-sm: 4px 4px 8px #b8bec5, -4px -4px 8px #ffffff;
+  --shadow-pressed: inset 4px 4px 8px #b8bec5, inset -4px -4px 8px #ffffff;
+  --shadow-hover: 8px 8px 18px #b8bec5, -8px -8px 18px #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  user-select: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+.app-header {
+  background: var(--panel-bg);
+  padding: 16px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-flat);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-flat-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-info h1 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: #111827;
+}
+
+.brand-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #059669;
+  background: var(--panel-bg);
+  padding: 3px 8px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-pressed);
+  display: inline-block;
+  margin-top: 2px;
+}
+
+/* Content Area */
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Neumorphic Cards */
+.theme-card {
+  background: var(--panel-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-flat);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Stats Badge Row */
+.stats-badge-row {
+  margin-top: 2px;
+}
+
+.stats-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #059669;
+  background: var(--panel-bg);
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-pressed);
+  display: inline-block;
+}
+
+/* Neumorphic Switch Toggle with Vibrant Green ON state */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--panel-bg);
+  box-shadow: var(--shadow-pressed);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px #b8bec5, -2px -2px 5px #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+}
+
+/* Vibrant Green ON state */
+input:checked + .slider {
+  background-color: #10b981 !important;
+  box-shadow: inset 3px 3px 6px #059669, inset -3px -3px 6px #34d399 !important;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px) !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Neumorphic Upload Area & Image Preview */
+.upload-area {
+  position: relative;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow-pressed);
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-area.dragover {
+  box-shadow: inset 6px 6px 12px #b8bec5, inset -6px -6px 12px #ffffff;
+  background: #d5dce6;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.upload-placeholder svg {
+  color: #10b981;
+  margin-bottom: 8px;
+}
+
+.upload-placeholder p {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.upload-placeholder span {
+  font-size: 10px;
+  color: #6b7280;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Image Preview Container */
+.preview-box {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-flat);
+  z-index: 10;
+}
+
+.preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.remove-img-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #ef4444;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: transform 0.2s ease;
+}
+
+.remove-img-btn:hover {
+  transform: scale(1.1);
+}
+
+.remove-img-btn:active {
+  transform: scale(0.95);
+}
+
+/* Controls & Sliders */
+.theme-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.control-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-row label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #374151;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Neumorphic Sliders with Live Green Accent */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow-pressed);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 3px 3px 6px #b8bec5, -3px -3px 6px #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #10b981;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.9);
+  background: #059669;
+}
+
+/* Neumorphic Select Dropdown */
+.select-styled {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+  background: var(--panel-bg);
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--shadow-flat-sm);
+  outline: none;
+  cursor: pointer;
+}
+
+.select-styled:focus {
+  box-shadow: var(--shadow-pressed);
+}
+
+/* Checkbox Row */
+.checkbox-row {
+  margin-top: 4px;
+}
+
+.custom-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+}
+
+.custom-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #10b981;
+  cursor: pointer;
+}
+
+/* Note Card */
+.note-card {
+  padding: 14px 18px;
+}
+
+.note-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.note-icon {
+  font-size: 16px;
+}
+
+.note-content p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.hidden {
+  display: none !important;
+}
